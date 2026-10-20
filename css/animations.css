@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Animations & Three.js Canvas Styling
+   ========================================================================== */
+
+/* 3D Canvas Layer */
+#canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ambient Glow Keyframe Animation */
+@keyframes subtleGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.glow-bg {
+  animation: subtleGlow 8s ease-in-out infinite;
+}
+
+/* Subtle micro-animations */
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Vector Illustrations & Dynamic SVG Keyframes
+   ========================================================================== */
+
+/* 1. Track movement (Slide 1) */
+@keyframes trackMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-40px); }
+}
+
+.anim-track {
+  animation: trackMove 0.8s linear infinite;
+}
+
+/* 2. Speed / wind lines */
+@keyframes speedStreak {
+  0% { stroke-dashoffset: 120; opacity: 0; }
+  30% { opacity: 0.8; }
+  70% { opacity: 0.8; }
+  100% { stroke-dashoffset: -120; opacity: 0; }
+}
+
+.anim-speed-line {
+  stroke-dasharray: 40 80;
+  animation: speedStreak 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 3. Train Headlight Glow Pulse */
+@keyframes headlightPulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.97); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+.anim-headlight {
+  transform-origin: center;
+  animation: headlightPulse 2s ease-in-out infinite;
+}
+
+/* 4. Gear rotations (Slide 3) */
+@keyframes spinCW {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinCCW {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.anim-gear-cw {
+  transform-origin: center;
+  animation: spinCW 6s linear infinite;
+}
+
+.anim-gear-ccw {
+  transform-origin: center;
+  animation: spinCCW 6s linear infinite;
+}
+
+/* 5. Conveyor cargo movement (Slide 3) */
+@keyframes cargoFlow {
+  0% { transform: translateX(-40px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(60px); opacity: 0; }
+}
+
+.anim-cargo {
+  animation: cargoFlow 3s ease-in-out infinite;
+}
+
+/* 6. Dynamic Bars (Slide 3 - Asset efficiency) */
+@keyframes barPulse1 {
+  0%, 100% { height: 28px; y: 44px; }
+  50% { height: 48px; y: 24px; }
+}
+
+@keyframes barPulse2 {
+  0%, 100% { height: 42px; y: 30px; }
+  50% { height: 60px; y: 12px; }
+}
+
+@keyframes barPulse3 {
+  0%, 100% { height: 55px; y: 17px; }
+  50% { height: 68px; y: 4px; }
+}
+
+.anim-bar-1 { animation: barPulse1 2.5s ease-in-out infinite; }
+.anim-bar-2 { animation: barPulse2 2.5s ease-in-out infinite 0.4s; }
+.anim-bar-3 { animation: barPulse3 2.5s ease-in-out infinite 0.8s; }
+
+/* 7. Contract signature drawing (Slide 2) */
+@keyframes drawStroke {
+  0% { stroke-dashoffset: 300; }
+  50% { stroke-dashoffset: 0; }
+  80% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 300; opacity: 0.5; }
+}
+
+.anim-signature {
+  stroke-dasharray: 300;
+  animation: drawStroke 4s ease-in-out infinite;
+}
+
+/* 8. Radar Sweep (Slide 4 - Incident management) */
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.anim-radar {
+  transform-origin: center;
+  animation: radarSweep 4s linear infinite;
+}
+
+@keyframes blipAlert {
+  0% { r: 3; opacity: 1; }
+  70% { r: 14; opacity: 0; }
+  100% { r: 14; opacity: 0; }
+}
+
+.anim-blip {
+  animation: blipAlert 2s ease-out infinite;
+}
+
+/* 9. Global Orbit & Data packets (Slide 5 - Governance) */
+@keyframes orbitRing {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -180; }
+}
+
+.anim-orbit {
+  stroke-dasharray: 8 12;
+  animation: orbitRing 5s linear infinite;
+}
+
+@keyframes globePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.anim-globe {
+  transform-origin: center;
+  animation: globePulse 4s ease-in-out infinite;
+}
+
+/* 10. Gauge / Caliper Laser Alignment (Slide 6 - Standards AAR/AREMA) */
+@keyframes caliperScan {
+  0%, 100% { transform: translateY(-12px); opacity: 0.6; }
+  50% { transform: translateY(14px); opacity: 1; }
+}
+
+.anim-caliper {
+  animation: caliperScan 2.4s ease-in-out infinite;
+}
+
+/* 11. Eco Leaves / CO2 Reduction (Slide 7 - Sustainability & modal shift) */
+@keyframes leafFloat {
+  0% { transform: translateY(15px) rotate(-8deg); opacity: 0; }
+  25% { opacity: 0.9; }
+  75% { opacity: 0.9; }
+  100% { transform: translateY(-25px) rotate(12deg); opacity: 0; }
+}
+
+.anim-leaf-1 { animation: leafFloat 3s ease-in-out infinite; }
+.anim-leaf-2 { animation: leafFloat 3s ease-in-out infinite 1.2s; }
+.anim-leaf-3 { animation: leafFloat 3s ease-in-out infinite 2s; }
+
+/* 12. Modal shift balance scale oscillate */
+@keyframes balanceTilt {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.anim-balance {
+  transform-origin: center;
+  animation: balanceTilt 4s ease-in-out infinite;
+}
+
+/* 13. Fireworks / Celebration particles (Slide 8 - Cierre) */
+@keyframes celebrateFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-8px) scale(1.15); opacity: 1; }
+}
+
+.anim-celebrate {
+  animation: celebrateFloat 2.5s ease-in-out infinite;
+}
