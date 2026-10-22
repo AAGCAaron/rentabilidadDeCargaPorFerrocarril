@@ -6,7 +6,7 @@
  */
 
 let currentSlide = 1;
-const totalSlides = 8;
+const totalSlides = 13;
 
 // DOM Elements
 let slides, prevBtn, nextBtn, slideCounter, dotsContainer;

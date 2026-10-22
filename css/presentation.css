@@ -4,12 +4,15 @@
 
 /* Glassmorphism Slide Cards */
 .glass-card {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   box-shadow: 0 20px 50px -10px rgba(148, 163, 184, 0.18),
               0 10px 20px -5px rgba(148, 163, 184, 0.1);
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
 }
 
 /* Base Slide Positioning */
@@ -19,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 5rem 1.5rem;
   opacity: 0;
   pointer-events: none;
   transform: translateY(20px) scale(0.98);
@@ -35,7 +38,7 @@
 
 /* Controls and navigation pills */
 .nav-pill {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.85);
@@ -44,9 +47,33 @@
 /* Dots navigation buttons */
 .dot-indicator {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 0.4rem;
 }
 
 .dot-indicator.active {
-  width: 1.5rem;
+  width: 1.8rem;
   background-color: #0f172a;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .slide {
+    padding: 4.75rem 0.85rem 5.5rem 0.85rem;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .glass-card {
+    padding: 1.25rem 1rem !important;
+    max-height: none;
+    border-radius: 1.5rem !important;
+  }
+
+  .dot-indicator {
+    height: 0.3rem;
+  }
+  
+  .dot-indicator.active {
+    width: 1.2rem;
+  }
 }

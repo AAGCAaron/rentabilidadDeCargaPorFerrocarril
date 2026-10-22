@@ -83,7 +83,7 @@
   animation: headlightPulse 2s ease-in-out infinite;
 }
 
-/* 4. Gear rotations (Slide 3) */
+/* 4. Gear rotations */
 @keyframes spinCW {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -104,7 +104,7 @@
   animation: spinCCW 6s linear infinite;
 }
 
-/* 5. Conveyor cargo movement (Slide 3) */
+/* 5. Conveyor cargo movement */
 @keyframes cargoFlow {
   0% { transform: translateX(-40px); opacity: 0; }
   15% { opacity: 1; }
@@ -116,7 +116,7 @@
   animation: cargoFlow 3s ease-in-out infinite;
 }
 
-/* 6. Dynamic Bars (Slide 3 - Asset efficiency) */
+/* 6. Dynamic Bars (Asset efficiency & Madrid comparison) */
 @keyframes barPulse1 {
   0%, 100% { height: 28px; y: 44px; }
   50% { height: 48px; y: 24px; }
@@ -136,7 +136,7 @@
 .anim-bar-2 { animation: barPulse2 2.5s ease-in-out infinite 0.4s; }
 .anim-bar-3 { animation: barPulse3 2.5s ease-in-out infinite 0.8s; }
 
-/* 7. Contract signature drawing (Slide 2) */
+/* 7. Contract signature drawing */
 @keyframes drawStroke {
   0% { stroke-dashoffset: 300; }
   50% { stroke-dashoffset: 0; }
@@ -149,7 +149,7 @@
   animation: drawStroke 4s ease-in-out infinite;
 }
 
-/* 8. Radar Sweep (Slide 4 - Incident management) */
+/* 8. Radar Sweep (Incident management) */
 @keyframes radarSweep {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -170,7 +170,7 @@
   animation: blipAlert 2s ease-out infinite;
 }
 
-/* 9. Global Orbit & Data packets (Slide 5 - Governance) */
+/* 9. Global Orbit & Data packets */
 @keyframes orbitRing {
   0% { stroke-dashoffset: 0; }
   100% { stroke-dashoffset: -180; }
@@ -191,7 +191,7 @@
   animation: globePulse 4s ease-in-out infinite;
 }
 
-/* 10. Gauge / Caliper Laser Alignment (Slide 6 - Standards AAR/AREMA) */
+/* 10. Gauge / Caliper Laser Alignment */
 @keyframes caliperScan {
   0%, 100% { transform: translateY(-12px); opacity: 0.6; }
   50% { transform: translateY(14px); opacity: 1; }
@@ -201,7 +201,7 @@
   animation: caliperScan 2.4s ease-in-out infinite;
 }
 
-/* 11. Eco Leaves / CO2 Reduction (Slide 7 - Sustainability & modal shift) */
+/* 11. Eco Leaves / CO2 Reduction */
 @keyframes leafFloat {
   0% { transform: translateY(15px) rotate(-8deg); opacity: 0; }
   25% { opacity: 0.9; }
@@ -224,7 +224,7 @@
   animation: balanceTilt 4s ease-in-out infinite;
 }
 
-/* 13. Fireworks / Celebration particles (Slide 8 - Cierre) */
+/* 13. Fireworks / Celebration particles */
 @keyframes celebrateFloat {
   0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
   50% { transform: translateY(-8px) scale(1.15); opacity: 1; }
@@ -232,4 +232,69 @@
 
 .anim-celebrate {
   animation: celebrateFloat 2.5s ease-in-out infinite;
+}
+
+/* 14. Intermodal Crane Lift Animation (Madrid Slide 2 - Camiones & Intermodal) */
+@keyframes craneHoist {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(-18px); }
+  65% { transform: translateY(-18px); }
+}
+
+.anim-crane-hoist {
+  animation: craneHoist 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 15. Shared TTX Pool & Private Sector Network (Madrid Slide 3 - Sector Privado) */
+@keyframes nodePulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 1; }
+}
+
+.anim-node-pulse {
+  transform-origin: center;
+  animation: nodePulse 2.5s ease-in-out infinite;
+}
+
+/* 16. PSR Stopwatch Precision Oscillation (Madrid Slide 4 - PSR & 2 cents) */
+@keyframes psrNeedle {
+  0% { transform: rotate(-45deg); }
+  50% { transform: rotate(55deg); }
+  100% { transform: rotate(-45deg); }
+}
+
+.anim-psr-needle {
+  transform-origin: 50px 50px;
+  animation: psrNeedle 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes metricShine {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.3)); }
+  50% { filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.8)); }
+}
+
+.anim-metric-shine {
+  animation: metricShine 2.5s ease-in-out infinite;
+}
+
+/* 17. Pillar of Law & Judicial Certainty (Madrid Slide 5 - Conclusiones) */
+@keyframes ruleLawBeam {
+  0%, 100% { opacity: 0.4; transform: scaleY(0.95); }
+  50% { opacity: 0.85; transform: scaleY(1.05); }
+}
+
+.anim-law-beam {
+  transform-origin: bottom center;
+  animation: ruleLawBeam 3.5s ease-in-out infinite;
+}
+
+/* 18. Comparative Train Length Indicator (Madrid Slide 1 - NA vs EU) */
+@keyframes lengthCompare {
+  0%, 100% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: 40; }
+}
+
+.anim-length-compare {
+  stroke-dasharray: 8 6;
+  animation: lengthCompare 2s linear infinite;
 }
